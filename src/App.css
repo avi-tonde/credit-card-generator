@@ -1,0 +1,22 @@
+*{
+  margin: 0;
+  padding: 0;
+
+}
+
+.bg{
+  display: flex;
+}
+.left{
+  background: rgb(69, 119, 248);
+  width: 34%;
+  height: 100vh;
+}
+.right{
+  background: rgb(255, 255, 255);
+  width: 66%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
