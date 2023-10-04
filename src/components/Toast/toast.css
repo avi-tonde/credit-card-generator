@@ -1,0 +1,16 @@
+.toast {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background: #fcfffa;
+    width: 25rem;
+    height: 5rem;
+    border-radius: 1rem;
+    border: 4px solid #3adb15;
+  
+  }
+  .toast img{
+    width: 4rem;
+    padding: 1rem;
+  }

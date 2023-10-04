@@ -1,22 +1,58 @@
-*{
+* {
   margin: 0;
   padding: 0;
+  font-family: Roboto;
+  font-style: normal;
 
 }
 
-.bg{
+.bg {
   display: flex;
 }
-.left{
+
+.left {
   background: rgb(69, 119, 248);
   width: 34%;
   height: 100vh;
 }
-.right{
+
+.right {
   background: rgb(255, 255, 255);
   width: 66%;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+  .cardFrame {
+    width: 18rem;
+    height: 10rem;
+  }
+
+  .cardBack img {
+    margin: 1.5rem 4rem;
+    height: 1.8rem;
+  }
+
+  .cardBack .cvv {
+    line-height: 1.6rem;
+  }
+
+  .cardFront .cardNumber {
+    font-size: 1.1rem;
+    line-height: 2rem;
+    margin: 0.5rem 0;
+
+  }
+
+  .cardFront .name {
+    font-size: .5rem;
+    line-height: 1rem;
+  }
+
 }

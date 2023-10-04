@@ -1,20 +1,37 @@
 import React, { useState } from 'react';
-import './form.css'
+import './form.css';
+import Toast from '../Toast/Toast';
 
-export default function Form() {
+
+
+export default function Form({setCardValues}) {
     const [formValues, setFormValues] = useState({});
     const [inputError, setInputError] = useState({});
+    const [toast, displayToast] = useState(false);
 
 
     const onChangeForm = (e) => {
         setFormValues({ ...formValues, [e.target.name]: e.target.value });
         console.log(formValues);
-
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+
+        if (validate(formValues)) {
+            setInputError(validate(formValues))
+            return;
+        }
         setInputError(validate(formValues));
+
+        if (Object.keys(formValues).length >= 5) {
+            setCardValues(formValues);
+            displayToast(true);
+            setTimeout(() => { displayToast(false) }, 1500);
+        }
+        return formValues;
+
     }
     const validate = (data) => {
         const errors = {};
@@ -31,12 +48,18 @@ export default function Form() {
         if (!data.cvv || data.cvv.length !== 3) {
             errors.cvv = "Enter Valid 3 Digit CVV";
         }
-        return errors;
+        if (Object.keys(errors).length === 0) {
+            return false;
+            
+          } else {
+            return errors;
+          }
 
     }
 
 
     return (
+        <>
 
         <form onSubmit={handleSubmit}>
             <div className="inputBox">
@@ -67,8 +90,10 @@ export default function Form() {
 
             </div>
 
-            <input type="submit" value="submit" className="submitBtn" />
+            <input type="submit" value="Confirm" className="submitBtn" />
 
         </form>
+                { toast ? <Toast /> : ""}
+        </>
     )
 }
