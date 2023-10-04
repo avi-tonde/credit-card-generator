@@ -11,10 +11,12 @@
 }
 
 .left {
-  background: rgb(69, 119, 248);
+  background: linear-gradient(27deg, rgb(60 103 242 / 20%) 52.61%, rgb(250 48 48 / 28%) 95.07%), linear-gradient(140deg, rgba(22, 4, 31, 0.98) 4.47%, #380C4A 15.5%, #3B0E46 19.19%, #3D0F42 23.38%, #441436 30.26%, #33254E 36.4%, #2B2D59 42.79%, #292654 47.99%, #271F4F 52.8%, #240D37 64.72%, #140023 79.1%);
   width: 34%;
   height: 100vh;
 }
+
+
 
 .right {
   background: rgb(255, 255, 255);
@@ -25,8 +27,7 @@
   justify-content: center;
 }
 
-
-
+  
 @media screen and (max-width: 768px) {
 
   .cardFrame {
